@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Paragraph Visibility</title>
+    <style>
+        /* Сховати абзаци за замовчуванням */
+        p {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" checked onchange="toggleParagraphVisibility(0)">
+    <p id="paragraph1">123</p>
+
+    <input type="checkbox" checked onchange="toggleParagraphVisibility(1)">
+    <p id="paragraph2">456</p>
+
+    <script>
+        function toggleParagraphVisibility(index) {
+            // Отримуємо елементи DOM
+            var checkbox = document.querySelectorAll('input[type="checkbox"]')[index];
+            var paragraph = document.querySelectorAll('p')[index];
+
+            // Встановлюємо видимість абзацу в залежності від стану чекбокса
+            paragraph.style.display = checkbox.checked ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</html>
